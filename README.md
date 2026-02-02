@@ -17,11 +17,15 @@ Users can control the robot via a responsive **Web Dashboard** that provides:
 -   **Voice Commands**: Integrated Web Speech API for hands-free control (e.g., "move forward for 5 seconds").
 -   **Chat Interface**: Text-based command execution.
 
+> [!IMPORTANT]
+> **Calibration Note**: The Arduino firmware is calibrated for the specific dimensions of this Hexapod build. Minute adjustments to the movement logic or servo angles may be required if your robot has different limb lengths.
+
 ## 🚀 Features
 
 *   **18-Servo Inverse Kinematics**: Complex gait handling for smooth movement.
 *   **Real-Time Video Stream**: Optimized MJPEG streaming using OpenCV with multi-threading.
 *   **Dual Control Modes**: Toggle between manual UI clicks or voice/text commands.
+*   **Remote Connectivity**: Accessible from any device (globally) using **ngrok** tunneling.
 *   **Secure Access**: Basic authentication enabled for the web interface.
 *   **Hardware Accelerated**: Efficient serial communication between Pi and Arduino.
 
@@ -93,6 +97,18 @@ pip install flask opencv-python pyserial flask-basicauth
 4.  **Control**:
     *   Use the arrow buttons to move.
     *   Click "🎙️ Speak" to give voice commands like *"Turn Left"* or *"Move Forward"*.
+
+### 5. Remote Access (Ngrok)
+To allow control from any device outside the local network:
+1.  Install **ngrok** and authenticate with your API key:
+    ```bash
+    ngrok config add-authtoken <YOUR_TOKEN>
+    ```
+2.  Start the tunnel on port 5000:
+    ```bash
+    ngrok http 5000
+    ```
+3.  Use the generated public URL to access the dashboard.
 
 ## 📂 Project Structure
 
