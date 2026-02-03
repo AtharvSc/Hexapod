@@ -127,4 +127,4 @@ To allow control from any device outside the local network:
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or new gait algorithms.
 
 ---
-*Created by [AtharvSc](https://github.com/AtharvSc)*
+*Created by [Shreyas Dambalkar](https://github.com/ShreyasDambalkar)*
